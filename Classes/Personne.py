@@ -1,6 +1,5 @@
 #Classe définissant une partie
-import os
-import simplejson as json
+import pickle
 
 class Person:
 #Props : nom, prénom, RIB, mail, num
@@ -13,13 +12,22 @@ class Person:
         self.mail = mail
         self.tel = tel
 
-    def save(self):
-        data = {"id": self.id, "data": {"nom": self.nom, "prenom": self.prenom, "rib": self.rib, "mail": self.mail, "tel": self.tel}}
-        #data = {"id": self.id, "data": {data}}
-        person_file = open("data/person.json", "+a")
-        person_file.write(json.dumps(data) + "\n")
-        person_file.close()
+    def modifyPrenom(self, value):
+        self.prenom = value
 
-    def modify(self):
-        old_file = open("data/person.json", "+w")
-        print(json.dumps(old_file))
+    def modifyNom(self, value):
+        self.nom = value
+
+    def modifyRib(self, value):
+        self.rib = value
+
+    def modifyMail(self, value):
+        self.mail = value
+
+    def modifyTel(self, value):
+        self.tel = value
+
+    def suppr(self, users_list):
+        print('yo')
+
+#
