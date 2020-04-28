@@ -30,4 +30,12 @@ class Person:
     def suppr(self, users_list):
         print('yo')
 
-#
+    def currentDettes(self, dette_list, users_list):
+        for dette in dette_list:
+            if self.id == dette.payeur:
+                dette.display(users_list)
+
+    def currentCredit(self, dette_list, users_list):
+        for dette in dette_list:
+            if self.id == dette.beneficiaire:
+                dette.display(users_list)
