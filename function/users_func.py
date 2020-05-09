@@ -2,13 +2,6 @@ import pickle
 from Classes.Personne import Person
 from function.general import save
 
-'''def save(users_list):
-    with open("data/person.dat", "wb") as f:
-        pickle.dump(len(users_list), f)
-        for value in users_list:
-            pickle.dump(value, f)
-            '''
-
 
 def add(users_list):
     nom = input('Nom : ')
