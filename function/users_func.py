@@ -3,6 +3,17 @@ from Classes.Personne import Person
 from function.general import save
 
 
+def LogIn(users_list):
+    print("Connexion")
+    print("-------------")
+    while True == True:
+        cred_mail = input("Adresse mail : ")
+        for i in range (0, len(users_list)):
+            if cred_mail == users_list[i].mail:
+                print("Bonjour " + users_list[i].prenom + " " + users_list[i].nom + ".\n")
+                return users_list[i].id
+        print("Aucun correspondance trouvée. Veuillez réessayer.\n")
+
 def add(users_list):
     nom = input('Nom : ')
     prenom = input('Prénom : ')
