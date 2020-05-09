@@ -1,6 +1,6 @@
 from Classes.Personne import Person
 from Classes.Dettes import Dette
-from function.users_func import usersManagement
+from function.users_func import usersManagement, LogIn
 from function.transctions_func import transactions
 from function.general import save
 import pickle
@@ -9,14 +9,14 @@ users_list = []
 with open("data/person.dat", "rb") as f:
     for _ in range(pickle.load(f)):
         users_list.append(pickle.load(f))
-
 dette_list = []
 with open("data/dette.dat", "rb") as f:
     for _ in range(pickle.load(f)):
         dette_list.append(pickle.load(f))
-
-
 run = True
+
+current_user = LogIn(users_list)
+
 while run:
     print("Good Friends")
     print("==============================================")
